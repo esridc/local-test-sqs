@@ -1,2 +1,1 @@
 # local-test-sqs
-boo
