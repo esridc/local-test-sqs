@@ -1,2 +1,4 @@
 # local-test-sqs
-IAM profile 
+IAM profile
+
+2.0
