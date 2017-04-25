@@ -1,14 +1,20 @@
 pipeline {
-    agent any
-    triggers {
+  
+  agent {
+      docker {
+          image 'python'
+      }
+  }
+  
+  triggers {
         githubPush()
     }
-
-    stages {
-       stage('screen out') {
-          steps {
-             echo 'hello'
-          }
-        }
+  
+  stages {
+    stage('setup dependencies') {
+      steps {
+          sh 'python --version'
+      }
     }
+  }
 }
