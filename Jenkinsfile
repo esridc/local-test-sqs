@@ -2,7 +2,7 @@ pipeline {
   
   agent {
       docker {
-          image 'python'
+          image 'maven'
       }
   }
   
@@ -11,9 +11,9 @@ pipeline {
     }
   
   stages {
-    stage('setup dependencies') {
+    stage('hello world') {
       steps {
-          sh 'python --version'
+          sh 'mvn --version'
       }
     }
   }
