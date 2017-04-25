@@ -1,14 +1,22 @@
 pipeline {
-    agent any
-    triggers {
+  
+  agent {
+      docker {
+          image 'maven'
+      }
+  }
+  
+  triggers {
         githubPush()
     }
-
-    stages {
-       stage('screen out') {
-          steps {
-             echo 'hello'
-          }
-        }
+  
+  stages {
+    stage('hello world') {
+      steps {
+          sh 'mvn --version'
+      }
     }
+    
+  }
+  
 }
